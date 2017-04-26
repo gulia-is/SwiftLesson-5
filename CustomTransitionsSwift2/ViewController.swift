@@ -10,53 +10,71 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let customPresentController = CustomPresentController()
-    let customDismissController = CustomDismissController()
+    @IBOutlet weak var collectionView: UICollectionView!
+    let cellIdentifier = "collectionViewCell"
+    
+    var imagesArr: Array<UIImage> = [UIImage(named: "1.jpg")!, UIImage(named: "2.jpg")!, UIImage(named: "3.jpg")!]
+    var imagesNames: [String] = ["1.jpg", "2.jpg", "3.jpg"]
+    
+    var selectedIndexPath: IndexPath!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        collectionView.register(UINib(nibName:"CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue"{
-            let toVC = segue.destination as! ViewController2
-            toVC.transitioningDelegate = self
+            let destination = segue.destination as! ViewController2
+            destination.image = sender as! UIImage
         }
     }
-
 }
 
-extension ViewController: UIViewControllerTransitioningDelegate{
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return customPresentController
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return customDismissController
-    }
-}
+//MARK : - UICollectionViewDataSource
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1;
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imagesArr.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "cell"
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath)
-        
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
+        cell.imageViewInCell.image = imagesArr[indexPath.row]
         return cell
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 100)
+    }
+    
+    //MARK : - UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let image = UIImage(named: imagesNames[indexPath.row])
+        self.selectedIndexPath = indexPath
+        performSegue(withIdentifier: "segue", sender: image)
+    }
+}
+
+extension ViewController : ZoomingViewController {
+    
+    func zoomingBackgroundView(for transition: ZoomTransitioningDelegate) -> UIView? {
+        return nil
+    }
+    
+    func zoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        if let indexPath = selectedIndexPath {
+            let cell = collectionView?.cellForItem(at: indexPath) as! CollectionViewCell
+            return cell.imageViewInCell
+        }
+        return nil
     }
 }

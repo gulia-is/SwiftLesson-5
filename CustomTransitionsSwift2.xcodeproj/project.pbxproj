@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00874B3E1EB1166E00AFBFB3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00874B3C1EB1166E00AFBFB3 /* CollectionViewCell.swift */; };
+		00874B3F1EB1166E00AFBFB3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00874B3D1EB1166E00AFBFB3 /* CollectionViewCell.xib */; };
+		00874B411EB1175B00AFBFB3 /* ZoomTranzitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00874B401EB1175B00AFBFB3 /* ZoomTranzitioningDelegate.swift */; };
 		7C9C72021E98DF3000CF807A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72011E98DF3000CF807A /* AppDelegate.swift */; };
 		7C9C72041E98DF3000CF807A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72031E98DF3000CF807A /* ViewController.swift */; };
 		7C9C72071E98DF3000CF807A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9C72051E98DF3000CF807A /* Main.storyboard */; };
 		7C9C72091E98DF3000CF807A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9C72081E98DF3000CF807A /* Assets.xcassets */; };
 		7C9C720C1E98DF3000CF807A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9C720A1E98DF3000CF807A /* LaunchScreen.storyboard */; };
 		7C9C72141E98DFC800CF807A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72131E98DFC800CF807A /* ViewController2.swift */; };
-		7C9C72161E98E31900CF807A /* CustomPresentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72151E98E31900CF807A /* CustomPresentController.swift */; };
-		7C9C72181E98ED1C00CF807A /* CustomDismissController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00874B3C1EB1166E00AFBFB3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		00874B3D1EB1166E00AFBFB3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		00874B401EB1175B00AFBFB3 /* ZoomTranzitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTranzitioningDelegate.swift; sourceTree = "<group>"; };
 		7C9C71FE1E98DF3000CF807A /* CustomTransitionsSwift2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitionsSwift2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9C72011E98DF3000CF807A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9C72031E98DF3000CF807A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,8 +30,6 @@
 		7C9C720B1E98DF3000CF807A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C9C720D1E98DF3000CF807A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C9C72131E98DFC800CF807A /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		7C9C72151E98E31900CF807A /* CustomPresentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentController.swift; sourceTree = "<group>"; };
-		7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00874B421EB11B0100AFBFB3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C9C72031E98DF3000CF807A /* ViewController.swift */,
+				7C9C72131E98DFC800CF807A /* ViewController2.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		00874B431EB11B1900AFBFB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00874B3C1EB1166E00AFBFB3 /* CollectionViewCell.swift */,
+				00874B3D1EB1166E00AFBFB3 /* CollectionViewCell.xib */,
+				00874B401EB1175B00AFBFB3 /* ZoomTranzitioningDelegate.swift */,
+				7C9C72051E98DF3000CF807A /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		7C9C71F51E98DF3000CF807A = {
 			isa = PBXGroup;
 			children = (
@@ -61,14 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				7C9C72011E98DF3000CF807A /* AppDelegate.swift */,
-				7C9C72151E98E31900CF807A /* CustomPresentController.swift */,
-				7C9C72031E98DF3000CF807A /* ViewController.swift */,
-				7C9C72131E98DFC800CF807A /* ViewController2.swift */,
-				7C9C72051E98DF3000CF807A /* Main.storyboard */,
+				00874B421EB11B0100AFBFB3 /* Controller */,
+				00874B431EB11B1900AFBFB3 /* View */,
 				7C9C72081E98DF3000CF807A /* Assets.xcassets */,
 				7C9C720A1E98DF3000CF807A /* LaunchScreen.storyboard */,
 				7C9C720D1E98DF3000CF807A /* Info.plist */,
-				7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */,
 			);
 			path = CustomTransitionsSwift2;
 			sourceTree = "<group>";
@@ -134,6 +153,7 @@
 			files = (
 				7C9C720C1E98DF3000CF807A /* LaunchScreen.storyboard in Resources */,
 				7C9C72091E98DF3000CF807A /* Assets.xcassets in Resources */,
+				00874B3F1EB1166E00AFBFB3 /* CollectionViewCell.xib in Resources */,
 				7C9C72071E98DF3000CF807A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,11 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C9C72161E98E31900CF807A /* CustomPresentController.swift in Sources */,
 				7C9C72041E98DF3000CF807A /* ViewController.swift in Sources */,
 				7C9C72021E98DF3000CF807A /* AppDelegate.swift in Sources */,
-				7C9C72181E98ED1C00CF807A /* CustomDismissController.swift in Sources */,
+				00874B3E1EB1166E00AFBFB3 /* CollectionViewCell.swift in Sources */,
 				7C9C72141E98DFC800CF807A /* ViewController2.swift in Sources */,
+				00874B411EB1175B00AFBFB3 /* ZoomTranzitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +333,7 @@
 				7C9C72121E98DF3000CF807A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
